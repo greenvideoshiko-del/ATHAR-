@@ -986,6 +986,26 @@ nav.scrolled{box-shadow:0 8px 32px rgba(11,42,87,.14)}
 .social-grid .social .si-snapchat svg{stroke:#000;stroke-width:.8;paint-order:stroke fill}
 .social-grid .social:hover .si{transform:translateY(-2px) rotate(-5deg)}
 @media(max-width:600px){.social-grid .social .si{width:42px;height:42px}.social-grid .social .si svg{width:22px;height:22px}}
+
+/* ===== services: compact side-by-side cards ===== */
+#features .grid{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:18px;counter-reset:svc}
+#features .grid .card{grid-column:auto!important;text-align:center;padding:32px 18px 26px;border-radius:24px;background:linear-gradient(180deg,#fff,#F7F9FC);display:flex;flex-direction:column;align-items:center}
+#features .grid .card::after{counter-increment:svc;content:"0" counter(svc);position:absolute;top:10px;inset-inline-end:16px;font-size:30px;font-weight:800;line-height:1;color:rgba(11,42,87,.07)}
+#features .grid .card .icon{display:grid;width:64px;height:64px;margin:0 auto 18px;border-radius:22px 22px 22px 8px;position:relative;font-size:26px}
+#features .grid .card .icon::after{content:"";position:absolute;inset:-6px;border-radius:26px 26px 26px 12px;border:1.5px dashed rgba(201,151,28,.55);transition:transform .4s,border-color .4s}
+#features .grid .card:hover .icon::after{transform:rotate(8deg);border-color:var(--gold)}
+#features .grid .card h3{font-size:16px;line-height:1.35;margin-bottom:8px}
+#features .grid .card p{font-size:13.5px;line-height:1.7;color:var(--muted)}
+@media(max-width:1000px){#features .grid{grid-template-columns:repeat(2,1fr)!important;gap:14px}}
+@media(max-width:600px){
+#features .grid{gap:12px}
+#features .grid .card{padding:24px 12px 20px;border-radius:20px}
+#features .grid .card::after{font-size:22px;top:8px;inset-inline-end:12px}
+#features .grid .card .icon{width:52px;height:52px;font-size:21px;margin-bottom:16px;border-radius:18px 18px 18px 6px}
+#features .grid .card .icon::after{border-radius:22px 22px 22px 10px}
+#features .grid .card h3{font-size:14px}
+#features .grid .card p{font-size:12.5px;line-height:1.6}
+}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
