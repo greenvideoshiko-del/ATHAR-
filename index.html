@@ -1021,6 +1021,31 @@ nav.scrolled{box-shadow:0 8px 32px rgba(11,42,87,.14)}
 a.demo-card:hover .demo-tag.live{background:var(--gold);color:var(--navy)}
 @media(max-width:900px){.demo-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
 @media(max-width:600px){.demo-card{padding:24px 12px 20px;border-radius:20px}.demo-card h3{font-size:14px}.demo-tag{font-size:11px;padding:6px 10px}}
+
+/* ===== CREATIVE HERO: the ripple portal ===== */
+.hero{overflow:hidden}
+.portal{position:relative;display:flex;justify-content:center;align-items:center;margin:28px auto 12px;width:100%;perspective:900px}
+.portal-rings{position:absolute;left:50%;top:50%;width:0;height:0;pointer-events:none}
+.portal-rings i{position:absolute;left:-210px;top:-210px;width:420px;height:420px;border-radius:50%;border:1.5px solid var(--gold);opacity:0;animation:ripple 6s ease-out infinite}
+.portal-rings i:nth-child(2){animation-delay:2s}
+.portal-rings i:nth-child(3){animation-delay:4s}
+@keyframes ripple{0%{transform:scale(.55);opacity:.7}100%{transform:scale(2.3);opacity:0}}
+.portal-frame{position:relative;width:min(290px,76vw);aspect-ratio:9/14;border-radius:999px 999px 30px 30px;overflow:hidden;border:3px solid var(--gold);background:var(--navy-deep);box-shadow:0 0 0 8px rgba(201,151,28,.14),0 30px 70px rgba(11,42,87,.35);transform-style:preserve-3d;transition:transform .25s ease-out;cursor:pointer}
+.portal-video{width:100%;height:100%;object-fit:cover;display:block}
+.sound-btn{position:absolute;bottom:14px;inset-inline-end:14px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(6,26,58,.6);backdrop-filter:blur(6px);color:#fff;font-size:18px;display:grid;place-items:center;cursor:pointer;padding:0}
+.sound-btn:hover{background:var(--gold)}
+/* ribbon */
+.ribbon{background:var(--navy-deep);border-block:2px solid var(--gold);overflow:hidden;direction:ltr;padding:13px 0}
+.ribbon-track{display:flex;width:max-content;gap:26px;animation:marquee 38s linear infinite}
+.ribbon-track span{color:#fff;font-weight:800;font-size:15px;letter-spacing:.06em;white-space:nowrap}
+.ribbon-track b{color:var(--gold);font-weight:400}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.ribbon:hover .ribbon-track{animation-play-state:paused}
+/* click ripple: every tap leaves a mark */
+.mark{position:fixed;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;border:2px solid var(--gold);pointer-events:none;z-index:4000;animation:mark .9s ease-out forwards}
+@keyframes mark{to{transform:scale(11);opacity:0}}
+@media(max-width:600px){.portal-rings i{left:-160px;top:-160px;width:320px;height:320px}.ribbon-track span{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.portal-rings i,.ribbon-track,.mark{animation:none}.portal-rings i{display:none}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1109,6 +1134,15 @@ src="athar-logo.webp"
 class="hero-logo"
 alt="ATHAR">
 
+<div class="portal" id="portal">
+<div class="portal-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="portal-frame" id="portalFrame">
+<video class="portal-video" id="portalVideo" muted loop playsinline autoplay preload="metadata" aria-label="ATHAR ad"><source src="hero-ad.mp4" type="video/mp4"></video>
+<button type="button" class="sound-btn" id="soundBtn" aria-label="Sound on/off" title="Sound"><span id="soundIcon">&#128263;</span></button>
+</div>
+</div>
+
+
 <h1
 data-en='Your Business Deserves To <span class="gold">Leave A Mark.</span>'
 data-ar='مشروعك يستحق أن <span class="gold">يترك أثرًا.</span>'>
@@ -1163,6 +1197,9 @@ VIEW OUR WORK
 </div>
 
 </section>
+
+<div class="ribbon" aria-hidden="true"><div class="ribbon-track"><span>مواقع إلكترونية</span><b>✦</b><span>WEBSITES</span><b>✦</b><span>QR CODE</span><b>✦</b><span>إعلانات AI</span><b>✦</b><span>AI ADS</span><b>✦</b><span>فيديو AI</span><b>✦</b><span>AI VIDEO</span><b>✦</b><span>واتساب</span><b>✦</b><span>WHATSAPP</span><b>✦</b><span>خرائط جوجل</span><b>✦</b><span>GOOGLE MAPS</span><b>✦</b><span>مواقع إلكترونية</span><b>✦</b><span>WEBSITES</span><b>✦</b><span>QR CODE</span><b>✦</b><span>إعلانات AI</span><b>✦</b><span>AI ADS</span><b>✦</b><span>فيديو AI</span><b>✦</b><span>AI VIDEO</span><b>✦</b><span>واتساب</span><b>✦</b><span>WHATSAPP</span><b>✦</b><span>خرائط جوجل</span><b>✦</b><span>GOOGLE MAPS</span><b>✦</b></div></div>
+
 <section
 class="section dark"
 id="features">
@@ -2641,6 +2678,40 @@ if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('active',l.get
 ['features','work','how','package','contact'].forEach(function(id){var s=document.getElementById(id);if(s){io.observe(s);}});
 }
 }catch(e){}
+})();
+</script>
+
+<script>
+(function(){
+try{
+var portal=document.getElementById('portal'),frame=document.getElementById('portalFrame'),v=document.getElementById('portalVideo');
+var btn=document.getElementById('soundBtn'),ic=document.getElementById('soundIcon');
+if(v&&portal){
+var src=v.querySelector('source');
+function hide(){portal.style.display='none';}
+if(src){src.addEventListener('error',hide);}
+v.addEventListener('error',hide);
+function setIcon(){ic.innerHTML=v.muted?'&#128263;':'&#128266;';}
+btn.addEventListener('click',function(e){e.stopPropagation();v.muted=!v.muted;if(!v.muted&&v.paused){v.play();}setIcon();});
+frame.addEventListener('click',function(){if(v.paused){v.play();}else{v.pause();}});
+if('IntersectionObserver' in window){
+new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var p=v.play();if(p&&p.catch){p.catch(function(){});}}else{v.pause();}});},{threshold:.25}).observe(frame);
+}
+if(window.matchMedia('(hover:hover)').matches&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+portal.addEventListener('pointermove',function(e){var r=frame.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;frame.style.transform='rotateY('+(x*10)+'deg) rotateX('+(-y*8)+'deg)';});
+portal.addEventListener('pointerleave',function(){frame.style.transform='';});
+}
+}
+if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+var live=0;
+document.addEventListener('pointerdown',function(e){
+if(live>10){return;}
+var m=document.createElement('div');m.className='mark';m.style.left=e.clientX+'px';m.style.top=e.clientY+'px';
+document.body.appendChild(m);live++;
+setTimeout(function(){m.remove();live--;},950);
+},{passive:true});
+}
+}catch(err){}
 })();
 </script>
 </body>
