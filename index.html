@@ -863,7 +863,7 @@ nav{background:rgba(255,255,255,.92);border-bottom:1px solid var(--border);box-s
 .language-btn:hover{background:var(--gold);color:var(--navy)}
 .hero{background:radial-gradient(circle at 88% 8%,rgba(201,151,28,.16),transparent 42%),radial-gradient(circle at 8% 92%,rgba(11,42,87,.09),transparent 45%),#fff}
 .hero::before{background:rgba(201,151,28,.10)}
-.hero-logo{width:min(400px,82%);height:auto;mix-blend-mode:multiply;filter:none}
+.hero-logo{width:min(330px,80%);height:auto;mix-blend-mode:multiply;filter:none}
 .hero h1{color:var(--navy)}
 .gold,.section-title span{color:var(--gold-dark)}
 .hero-sub{color:var(--gold-dark)}
@@ -1006,6 +1006,21 @@ nav.scrolled{box-shadow:0 8px 32px rgba(11,42,87,.14)}
 #features .grid .card h3{font-size:14px}
 #features .grid .card p{font-size:12.5px;line-height:1.6}
 }
+
+/* ===== demos section ===== */
+.demo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1100px;margin:0 auto}
+.demo-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:30px 16px 24px;border-radius:24px;text-decoration:none;color:var(--navy)}
+.demo-card .icon{margin:0 auto 16px}
+.demo-card h3{font-size:16px;margin-bottom:12px}
+.demo-tag{font-size:12px;font-weight:800;padding:7px 14px;border-radius:999px}
+.demo-tag.live{background:var(--navy);color:var(--gold-light)}
+.demo-tag.soon{background:#EEF2F8;color:var(--muted);border:1px dashed #C5CFDE}
+.demo-card.soon{opacity:.8}
+.demo-card.soon:hover{transform:none;box-shadow:0 8px 30px rgba(11,42,87,.06);border-color:var(--border)}
+.demo-card.soon:hover::before{transform:scaleX(0)}
+a.demo-card:hover .demo-tag.live{background:var(--gold);color:var(--navy)}
+@media(max-width:900px){.demo-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+@media(max-width:600px){.demo-card{padding:24px 12px 20px;border-radius:20px}.demo-card h3{font-size:14px}.demo-tag{font-size:11px;padding:6px 10px}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1188,9 +1203,9 @@ BUSINESS WEBSITE
 </h3>
 
 <p
-data-en="A modern website that presents your business professionally and clearly."
-data-ar="موقع حديث يعرض مشروعك وخدماتك بصورة احترافية وواضحة.">
-A modern website that presents your business professionally and clearly.
+data-en="Present your business professionally and win customers' trust."
+data-ar="اعرض نشاطك بصورة احترافية واكسب ثقة عملائك.">
+Present your business professionally and win customers' trust.
 </p>
 </div>
 
@@ -1226,9 +1241,9 @@ WHATSAPP CONTACT
 </h3>
 
 <p
-data-en="Customers can contact your business directly with one simple click."
-data-ar="يمكن لعملائك التواصل مع مشروعك مباشرة بضغطة واحدة.">
-Customers can contact your business directly with one simple click.
+data-en="Receive customer inquiries directly, with one tap."
+data-ar="استقبل استفسارات العملاء مباشرة بضغطة واحدة.">
+Receive customer inquiries directly, with one tap.
 </p>
 </div>
 
@@ -1245,9 +1260,9 @@ GOOGLE MAPS
 </h3>
 
 <p
-data-en="Make it easier for customers to find and visit your business."
-data-ar="اجعل الوصول إلى مشروعك أسهل لعملائك.">
-Make it easier for customers to find and visit your business.
+data-en="Help customers find you and reach your location easily."
+data-ar="ساعد عملاءك في الوصول إليك بسهولة.">
+Help customers find you and reach your location easily.
 </p>
 </div>
 
@@ -1283,9 +1298,9 @@ CUSTOM QR CODE
 </h3>
 
 <p
-data-en="Give customers a fast and simple way to access your digital presence."
-data-ar="امنح عملاءك طريقة سريعة وسهلة للوصول إلى حضورك الرقمي.">
-Give customers a fast and simple way to access your digital presence.
+data-en="Make it easier for people to open your page, anywhere."
+data-ar="اجعل الوصول إلى صفحتك أسهل في أي مكان.">
+Make it easier for people to open your page, anywhere.
 </p>
 </div>
 
@@ -1410,6 +1425,42 @@ Follow ATHAR and discover our latest digital work.
 
 
 
+<section class="section dark" id="demos">
+
+<div class="section-heading">
+<h2 class="section-title" data-en='SEE WHAT YOUR BUSINESS <span>COULD LOOK LIKE</span>' data-ar='شاهد كيف <span>سيبدو مشروعك</span>'>
+SEE WHAT YOUR BUSINESS <span>COULD LOOK LIKE</span>
+</h2>
+<p class="section-description" data-en="Pick your business type and preview a ready-made page style." data-ar="اختر نوع نشاطك وشاهد نموذجاً لشكل صفحتك.">
+Pick your business type and preview a ready-made page style.
+</p>
+</div>
+
+<div class="demo-grid">
+<a class="card demo-card" href="https://greenvideoshiko-del.github.io/NOVA/" target="_blank" rel="noopener">
+<div class="icon"><i class="fa-solid fa-tooth"></i></div>
+<h3 data-en="Dental Clinic" data-ar="صفحة لعيادة أسنان">Dental Clinic</h3>
+<span class="demo-tag live" data-en="VIEW LIVE DEMO" data-ar="شاهد النموذج">VIEW LIVE DEMO</span>
+</a>
+<div class="card demo-card soon">
+<div class="icon"><i class="fa-solid fa-utensils"></i></div>
+<h3 data-en="Restaurant" data-ar="صفحة لمطعم">Restaurant</h3>
+<span class="demo-tag soon" data-en="COMING SOON" data-ar="قريباً">COMING SOON</span>
+</div>
+<div class="card demo-card soon">
+<div class="icon"><i class="fa-solid fa-building"></i></div>
+<h3 data-en="Real Estate" data-ar="صفحة عقارية">Real Estate</h3>
+<span class="demo-tag soon" data-en="COMING SOON" data-ar="قريباً">COMING SOON</span>
+</div>
+<div class="card demo-card soon">
+<div class="icon"><i class="fa-solid fa-spa"></i></div>
+<h3 data-en="Beauty Salon" data-ar="صفحة لمركز تجميل">Beauty Salon</h3>
+<span class="demo-tag soon" data-en="COMING SOON" data-ar="قريباً">COMING SOON</span>
+</div>
+</div>
+
+</section>
+
 <section
 class="section"
 id="work">
@@ -1463,7 +1514,7 @@ A modern bilingual website designed for a dental clinic.
 <br>
 
 <a
-href="https://greenvideoshiko-del.github.io/novo-dental/"
+href="https://greenvideoshiko-del.github.io/NOVA/"
 target="_blank"
 rel="noopener"
 class="btn">
