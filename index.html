@@ -1046,6 +1046,10 @@ a.demo-card:hover .demo-tag.live{background:var(--gold);color:var(--navy)}
 @keyframes mark{to{transform:scale(11);opacity:0}}
 @media(max-width:600px){.portal-rings i{left:-160px;top:-160px;width:320px;height:320px}.ribbon-track span{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.portal-rings i,.ribbon-track,.mark{animation:none}.portal-rings i{display:none}}
+
+/* QR card */
+.qr-container img{image-rendering:pixelated;border:6px solid var(--navy);border-radius:20px;background:#fff;padding:10px;box-shadow:0 14px 36px rgba(11,42,87,.18)}
+.qr-url{display:block;margin-top:14px;font-size:14px;font-weight:700;color:var(--navy);word-break:break-all;letter-spacing:.01em}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2015,8 +2019,10 @@ SCAN. CONNECT. EXPLORE.
 </h3>
 
 <img
-src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://greenvideoshiko-del.github.io/ATHAR-/"
-alt="ATHAR QR Code">
+src="athar-qr.png"
+alt="ATHAR QR Code"
+width="250"
+height="250">
 
 <p
 data-en="Scan to visit ATHAR."
@@ -2025,6 +2031,9 @@ data-ar="امسح الكود لزيارة ATHAR.">
 Scan to visit ATHAR.
 
 </p>
+
+<span class="qr-url" dir="ltr">greenvideoshiko-del.github.io/ATHAR-/</span>
+
 
 </div>
 
