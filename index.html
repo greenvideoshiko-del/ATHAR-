@@ -1075,6 +1075,12 @@ a.demo-card:hover .demo-tag.live{background:var(--gold);color:var(--navy)}
 .price-terms li::before{content:"\2022";position:absolute;inset-inline-start:2px;color:var(--gold-dark);font-weight:800}
 @media(max-width:1000px){.price-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.price-grid{grid-template-columns:1fr;gap:22px}.price{font-size:38px}.hero.hero-top{padding:88px 20px 6px!important}}
+
+/* ===== two videos side by side ===== */
+.portal-duo{position:relative;z-index:1;display:flex;justify-content:center;align-items:flex-start;gap:18px;width:100%}
+.portal-duo .portal-frame{width:min(250px,44vw);flex:0 0 auto}
+.portal-duo .portal-frame-2{margin-top:46px}
+@media(max-width:600px){.portal-duo{gap:10px}.portal-duo .portal-frame-2{margin-top:30px}.portal-duo .sound-btn{width:36px;height:36px;font-size:15px;bottom:10px;inset-inline-end:10px}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1257,9 +1263,16 @@ Follow ATHAR and discover our latest digital work.
 
 <div class="portal" id="portal">
 <div class="portal-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="portal-duo">
 <div class="portal-frame" id="portalFrame">
 <video class="portal-video" id="portalVideo" muted loop playsinline autoplay preload="metadata" aria-label="ATHAR ad"><source src="hero-ad-2.mp4" type="video/mp4"><source src="hero-ad.mp4" type="video/mp4"></video>
 <button type="button" class="sound-btn" id="soundBtn" aria-label="Sound on/off" title="Sound"><span id="soundIcon">&#128263;</span></button>
+</div>
+
+<div class="portal-frame portal-frame-2" id="portalFrame2">
+<video class="portal-video" muted loop playsinline autoplay preload="metadata" aria-label="ATHAR ad 2"><source src="hero-ad-3.mp4" type="video/mp4"></video>
+<button type="button" class="sound-btn" aria-label="Sound on/off" title="Sound"><span>&#128263;</span></button>
+</div>
 </div>
 </div>
 
@@ -2927,6 +2940,26 @@ var m=document.createElement('div');m.className='mark';m.style.left=e.clientX+'p
 document.body.appendChild(m);live++;
 setTimeout(function(){m.remove();live--;},950);
 },{passive:true});
+}
+}catch(err){}
+})();
+</script>
+
+<script>
+(function(){
+try{
+var f=document.getElementById('portalFrame2'),v1=document.getElementById('portalVideo');
+if(!f){return;}
+var v=f.querySelector('video'),b=f.querySelector('.sound-btn'),ic=b.querySelector('span');
+var s=v.querySelectorAll('source');
+s[s.length-1].addEventListener('error',function(){f.style.display='none';});
+function setIcon(){ic.innerHTML=v.muted?'&#128263;':'&#128266;';}
+b.addEventListener('click',function(e){e.stopPropagation();v.muted=!v.muted;if(!v.muted&&v.paused){v.play();}setIcon();});
+f.addEventListener('click',function(){if(v.paused){v.play();}else{v.pause();}});
+v.addEventListener('volumechange',function(){if(!v.muted&&v1&&!v1.muted){v1.muted=true;var i1=document.getElementById('soundIcon');if(i1){i1.innerHTML='&#128263;';}}});
+if(v1){v1.addEventListener('volumechange',function(){if(!v1.muted&&!v.muted){v.muted=true;setIcon();}});}
+if('IntersectionObserver' in window){
+new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var p=v.play();if(p&&p.catch){p.catch(function(){});}}else{v.pause();}});},{threshold:.25}).observe(f);
 }
 }catch(err){}
 })();
