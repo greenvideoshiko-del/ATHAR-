@@ -1199,6 +1199,45 @@ footer{background:#050A17;border-top:1px solid rgba(212,175,55,.5)}
 .mark{border-color:var(--cyan)}
 @media(min-width:901px){.card,.price-card,.demo-card,.package,.contact-info,.contact-form,.qr-container{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}nav{-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}}
 @media(prefers-reduced-motion:reduce){.hero-logo{animation:none}}
+
+/* ===== About / story ===== */
+.about-title{font-size:clamp(26px,4vw,44px);line-height:1.2}
+.about-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:22px;max-width:1100px;margin:0 auto}
+.about-story{padding:34px 30px}
+.about-story:hover{transform:none}
+.about-label{display:block;color:var(--cyan);font-weight:800;font-size:13px;letter-spacing:.2em;margin-bottom:10px}
+[dir="rtl"] .about-label{letter-spacing:.04em}
+.about-lead{font-size:clamp(20px,2.6vw,27px);font-weight:800;line-height:1.35;margin:0 0 18px;color:#F5F7FA}
+.about-lead span{background:linear-gradient(90deg,#F0D57A,#D4AF37);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.about-story p{color:#C9D5E8;line-height:1.85;font-size:15.5px;margin:0 0 14px}
+.about-sign{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);font-weight:800;color:var(--gold-light);font-size:16px}
+.about-side{display:grid;gap:22px;align-content:stretch}
+.about-side .card{display:flex;gap:16px;align-items:flex-start;padding:26px 24px}
+.about-side .icon{flex:0 0 auto;margin:0}
+.about-side h3{margin:0 0 8px;font-size:14px;letter-spacing:.16em;color:var(--gold)}
+[dir="rtl"] .about-side h3{letter-spacing:.04em}
+.about-side p{margin:0;font-size:15px;line-height:1.75}
+.impact-mark{position:relative;width:110px;height:110px;margin:52px auto 18px}
+.impact-mark i{position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--cyan);opacity:0;animation:ripple 5s ease-out infinite}
+.impact-mark i:nth-child(2){border-color:var(--gold);animation-delay:1.6s}
+.impact-mark i:nth-child(3){animation-delay:3.2s}
+.impact-mark b{position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:radial-gradient(circle,#F0D57A,#D4AF37);box-shadow:0 0 26px rgba(212,175,55,.85)}
+.about-values-title{text-align:center;font-size:14px;letter-spacing:.3em;color:var(--cyan);margin:0 0 22px;font-weight:800}
+[dir="rtl"] .about-values-title{letter-spacing:.06em}
+.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1100px;margin:0 auto}
+.value-card{text-align:center;display:flex;flex-direction:column;align-items:center;padding:26px 16px 22px}
+.value-card .icon{margin:0 0 14px}
+.value-card h3{font-size:16px;margin:0 0 8px}
+.value-card p{font-size:13.5px;line-height:1.65;margin:0}
+.about-close{text-align:center;margin:60px auto 0;max-width:760px}
+.about-close-name{font-size:clamp(40px,8vw,76px);font-weight:800;letter-spacing:.18em;line-height:1;background:linear-gradient(90deg,#F0D57A,#D4AF37 55%,#20C7E8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.about-close-line{margin-top:14px;font-weight:800;font-size:clamp(14px,2.4vw,19px);letter-spacing:.14em;color:#F5F7FA}
+[dir="rtl"] .about-close-name,[dir="rtl"] .about-close-line{letter-spacing:.02em}
+.about-close-mark{margin-top:10px;font-weight:800;font-size:14px;letter-spacing:.34em;color:var(--cyan);text-shadow:0 0 14px rgba(32,199,232,.55)}
+[dir="rtl"] .about-close-mark{letter-spacing:.06em}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+@media(max-width:600px){.about-story{padding:26px 20px}.about-side .card{padding:22px 18px}.value-card{padding:22px 12px 18px}.value-card h3{font-size:14px}.value-card p{font-size:12.5px}}
+@media(prefers-reduced-motion:reduce){.impact-mark i{animation:none;display:none}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1244,6 +1283,7 @@ alt="ATHAR Logo">
 <a href="#work" data-en="Our Work" data-ar="أعمالنا">Our Work</a>
 <a href="#how" data-en="How We Work" data-ar="كيف نعمل">How We Work</a>
 <a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a>
+<a href="#about" data-en="About ATHAR" data-ar="عن ATHAR">About ATHAR</a>
 <a href="#contact" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</a>
 <a href="#contact" class="nav-cta" data-en="START YOUR PROJECT" data-ar="ابدأ مشروعك">START YOUR PROJECT</a>
 <button
@@ -1263,6 +1303,7 @@ id="languageBtn">
 <a href="#work" data-en="Our Work" data-ar="أعمالنا">Our Work</a>
 <a href="#how" data-en="How We Work" data-ar="كيف نعمل">How We Work</a>
 <a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a>
+<a href="#about" data-en="About ATHAR" data-ar="عن ATHAR">About ATHAR</a>
 <a href="#contact" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</a>
 <a href="#contact" class="nav-cta" data-en="START YOUR PROJECT" data-ar="ابدأ مشروعك">START YOUR PROJECT</a>
 </div>
@@ -2254,8 +2295,86 @@ Professional Digital Solutions. Transparent Pricing. Global Reach.
 <li data-en="50% upfront payment before work begins." data-ar="دفعة مقدمة 50% قبل بدء العمل.">50% upfront payment before work begins.</li>
 </ul>
 
-</section><section class="cta-band" id="cta">
-<span class="eyebrow-no" data-en="06 — LET'S MAKE AN IMPACT" data-ar="06 — لنصنع أثراً">06 — LET'S MAKE AN IMPACT</span>
+</section>
+
+<section class="section dark" id="about">
+
+<div class="section-heading">
+<span class="eyebrow-no" data-en="06 — OUR STORY" data-ar="06 — قصتنا">06 — OUR STORY</span>
+<h2 class="section-title about-title" data-en='BEHIND EVERY GREAT IDEA, <span>THERE IS AN IMPACT.</span>' data-ar='خلف كل فكرة عظيمة... <span>هناك أثر يستحق أن يُترك.</span>'>
+BEHIND EVERY GREAT IDEA, <span>THERE IS AN IMPACT.</span>
+</h2>
+</div>
+
+<div class="about-grid">
+
+<div class="card about-story">
+<span class="about-label" data-en="OUR STORY" data-ar="قصتنا">OUR STORY</span>
+<h3 class="about-lead" data-en='Every brand has a story. <span>We help it leave a mark.</span>' data-ar='لكل علامة تجارية قصة. <span>ونحن نساعدها على ترك أثرها.</span>'>
+Every brand has a story. <span>We help it leave a mark.</span>
+</h3>
+<p data-en="ATHAR was born from a simple belief: every business deserves a powerful digital presence." data-ar="وُلدت ATHAR من إيمان بسيط: كل مشروع يستحق حضوراً رقمياً قوياً.">ATHAR was born from a simple belief: every business deserves a powerful digital presence.</p>
+<p data-en="We bring creativity, technology, and artificial intelligence together to transform ideas into meaningful digital experiences." data-ar="نجمع بين الإبداع والتكنولوجيا والذكاء الاصطناعي لتحويل الأفكار إلى تجارب رقمية ذات معنى.">We bring creativity, technology, and artificial intelligence together to transform ideas into meaningful digital experiences.</p>
+<p data-en="From modern websites and smart business pages to cinematic AI videos and creative advertising, we help businesses build their identity, connect with their audience, and stand out in a competitive digital world." data-ar="من المواقع الحديثة وصفحات الأعمال الذكية إلى فيديوهات الذكاء الاصطناعي السينمائية والإعلانات الإبداعية، نساعد الأعمال على بناء هويتها والتواصل مع جمهورها والتميز في عالم رقمي مليء بالمنافسة.">From modern websites and smart business pages to cinematic AI videos and creative advertising, we help businesses build their identity, connect with their audience, and stand out in a competitive digital world.</p>
+<p data-en="We don't just create digital content. We create experiences that make brands memorable." data-ar="نحن لا نصنع محتوى رقمياً فحسب. نحن نصنع تجارب تجعل العلامات التجارية لا تُنسى.">We don't just create digital content. We create experiences that make brands memorable.</p>
+<div class="about-sign" data-en="ATHAR — More Than Digital. It's Your Impact." data-ar="ATHAR — أكثر من رقمي. إنه أثرك.">ATHAR — More Than Digital. It's Your Impact.</div>
+</div>
+
+<div class="about-side">
+<div class="card">
+<div class="icon"><i class="fa-solid fa-eye"></i></div>
+<div>
+<h3 data-en="OUR VISION" data-ar="رؤيتنا">OUR VISION</h3>
+<p data-en="To become a creative digital partner for businesses around the world, making innovation accessible and helping every brand leave its unique mark." data-ar="نسعى لأن نكون شريكاً إبداعياً رقمياً للمشروعات حول العالم، نجعل الابتكار متاحاً ونساعد كل علامة تجارية على ترك بصمتها الخاصة.">To become a creative digital partner for businesses around the world, making innovation accessible and helping every brand leave its unique mark.</p>
+</div>
+</div>
+<div class="card">
+<div class="icon"><i class="fa-solid fa-bullseye"></i></div>
+<div>
+<h3 data-en="OUR MISSION" data-ar="رسالتنا">OUR MISSION</h3>
+<p data-en="To turn ideas into powerful digital experiences through innovative design, smart technology, and AI-powered creativity." data-ar="تحويل الأفكار إلى تجارب رقمية مؤثرة من خلال التصميم المبتكر والتكنولوجيا الذكية والإبداع المدعوم بالذكاء الاصطناعي.">To turn ideas into powerful digital experiences through innovative design, smart technology, and AI-powered creativity.</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="impact-mark" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+
+<h3 class="about-values-title" data-en="OUR VALUES" data-ar="قيمنا">OUR VALUES</h3>
+<div class="values-grid">
+<div class="card value-card">
+<div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
+<h3 data-en="Creativity" data-ar="الإبداع">Creativity</h3>
+<p data-en="Different ideas and designs that leave an impression." data-ar="أفكار مختلفة وتصميمات تترك انطباعاً.">Different ideas and designs that leave an impression.</p>
+</div>
+<div class="card value-card">
+<div class="icon"><i class="fa-solid fa-microchip"></i></div>
+<h3 data-en="Innovation" data-ar="الابتكار">Innovation</h3>
+<p data-en="Using the latest technology and artificial intelligence." data-ar="استخدام أحدث التقنيات والذكاء الاصطناعي.">Using the latest technology and artificial intelligence.</p>
+</div>
+<div class="card value-card">
+<div class="icon"><i class="fa-solid fa-gem"></i></div>
+<h3 data-en="Quality" data-ar="الجودة">Quality</h3>
+<p data-en="Attention to detail in every project." data-ar="الاهتمام بالتفاصيل في كل مشروع.">Attention to detail in every project.</p>
+</div>
+<div class="card value-card">
+<div class="icon"><i class="fa-solid fa-handshake"></i></div>
+<h3 data-en="Partnership" data-ar="الشراكة">Partnership</h3>
+<p data-en="Our clients' success is part of our success." data-ar="نجاح عملائنا جزء من نجاحنا.">Our clients' success is part of our success.</p>
+</div>
+</div>
+
+<div class="about-close">
+<div class="about-close-name">ATHAR</div>
+<div class="about-close-line" data-en="YOUR IDEAS. OUR CREATIVITY. YOUR IMPACT." data-ar="أفكارك. إبداعنا. أثرك.">YOUR IDEAS. OUR CREATIVITY. YOUR IMPACT.</div>
+<div class="about-close-mark" data-en="LEAVE YOUR MARK." data-ar="اترك بصمتك.">LEAVE YOUR MARK.</div>
+</div>
+
+</section>
+
+<section class="cta-band" id="cta">
+<span class="eyebrow-no" data-en="07 — LET'S MAKE AN IMPACT" data-ar="07 — لنصنع أثراً">07 — LET'S MAKE AN IMPACT</span>
 <h2 data-en='Ready To Leave <span>Your Mark?</span>' data-ar='جاهز لتترك <span>أثرك؟</span>'>
 Ready To Leave <span>Your Mark?</span>
 </h2>
@@ -2537,7 +2656,7 @@ id="formStatus">
 
 <div class="section-heading">
 
-<span class="eyebrow-no" data-en="07 — THE DIGITAL CONNECTION" data-ar="07 — الاتصال الرقمي">07 — THE DIGITAL CONNECTION</span>
+<span class="eyebrow-no" data-en="08 — THE DIGITAL CONNECTION" data-ar="08 — الاتصال الرقمي">08 — THE DIGITAL CONNECTION</span>
 <h2 class="section-title" data-en='Stay <span>Connected</span>' data-ar='ابقَ على <span>تواصل</span>'>
 Stay <span>Connected</span>
 </h2>
@@ -2629,7 +2748,8 @@ Your business deserves to leave a mark. We build professional digital experience
 
 </p>
 
-<div class="footer-links"><a href="#top" data-en="Home" data-ar="الرئيسية">Home</a><a href="#features" data-en="Services" data-ar="الخدمات">Services</a><a href="#work" data-en="Our Work" data-ar="أعمالنا">Our Work</a><a href="#how" data-en="How We Work" data-ar="كيف نعمل">How We Work</a><a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a><a href="#contact" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</a></div>
+<div class="footer-links"><a href="#top" data-en="Home" data-ar="الرئيسية">Home</a><a href="#features" data-en="Services" data-ar="الخدمات">Services</a><a href="#work" data-en="Our Work" data-ar="أعمالنا">Our Work</a><a href="#how" data-en="How We Work" data-ar="كيف نعمل">How We Work</a><a href="#pricing" data-en="Pricing" data-ar="الأسعار">Pricing</a>
+<a href="#about" data-en="About ATHAR" data-ar="عن ATHAR">About ATHAR</a><a href="#contact" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</a></div>
 <p style="margin-top:18px;">
 
 © <span id="year"></span> ATHAR
@@ -2996,7 +3116,7 @@ var links=document.querySelectorAll('.nav-links a[href^="#"]');
 var io=new IntersectionObserver(function(es){es.forEach(function(e){
 if(e.isIntersecting){links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id);});}
 });},{rootMargin:'-45% 0px -50% 0px'});
-['top','features','work','how','pricing','contact'].forEach(function(id){var s=document.getElementById(id);if(s){io.observe(s);}});
+['top','features','work','how','pricing','about','contact'].forEach(function(id){var s=document.getElementById(id);if(s){io.observe(s);}});
 }
 }catch(e){}
 })();
