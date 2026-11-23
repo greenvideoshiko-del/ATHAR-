@@ -1238,6 +1238,11 @@ footer{background:#050A17;border-top:1px solid rgba(212,175,55,.5)}
 @media(max-width:900px){.about-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
 @media(max-width:600px){.about-story{padding:26px 20px}.about-side .card{padding:22px 18px}.value-card{padding:22px 12px 18px}.value-card h3{font-size:14px}.value-card p{font-size:12.5px}}
 @media(prefers-reduced-motion:reduce){.impact-mark i{animation:none;display:none}}
+
+/* UGC pair: Arabic + English side by side, first in Our Work */
+.ugc-pair{grid-column:1/-1;flex:0 0 100%;width:100%;max-width:640px;margin:0 auto 6px;justify-self:center;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.ugc-pair .card{min-width:0}
+@media(max-width:600px){.ugc-pair{gap:10px}.ugc-pair .card{padding:18px 10px}.ugc-pair .card h3{font-size:12.5px}.ugc-pair .card p{font-size:12px}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1583,6 +1588,70 @@ Explore our digital projects and business website demos.
 
 <div class="grid">
 
+<div class="ugc-pair">
+<div class="card work-card video-card">
+
+<video
+class="work-video"
+controls
+playsinline
+preload="metadata">
+<source
+src="work-video-6.mp4"
+type="video/mp4"
+onerror="this.closest('.video-card').style.display='none'">
+</video>
+
+<h3
+data-en="UGC · ARABIC VERSION"
+data-ar="UGC · النسخة العربية">
+
+UGC · ARABIC VERSION
+
+</h3>
+
+<p
+data-en="A sample UGC-style video, Arabic version."
+data-ar="نموذج فيديو بأسلوب UGC، النسخة العربية.">
+
+A sample UGC-style video, Arabic version.
+
+</p>
+
+</div>
+
+<div class="card work-card video-card">
+
+<video
+class="work-video"
+controls
+playsinline
+preload="metadata">
+<source
+src="work-video-7.mp4"
+type="video/mp4"
+onerror="this.closest('.video-card').style.display='none'">
+</video>
+
+<h3
+data-en="UGC · ENGLISH VERSION"
+data-ar="UGC · النسخة الإنجليزية">
+
+UGC · ENGLISH VERSION
+
+</h3>
+
+<p
+data-en="The English version of the same UGC-style video."
+data-ar="النسخة الإنجليزية من نفس فيديو UGC.">
+
+The English version of the same UGC-style video.
+
+</p>
+
+</div>
+</div>
+
 <div class="card work-card">
 
 <div class="icon">
@@ -1788,36 +1857,7 @@ A sample product advertisement from our work.
 </div>
 
 
-<div class="card work-card video-card">
 
-<video
-class="work-video"
-controls
-playsinline
-preload="metadata">
-<source
-src="work-video-6.mp4"
-type="video/mp4"
-onerror="this.closest('.video-card').style.display='none'">
-</video>
-
-<h3
-data-en="UGC"
-data-ar="UGC">
-
-UGC
-
-</h3>
-
-<p
-data-en="A sample UGC-style video from our work."
-data-ar="نموذج فيديو بأسلوب UGC من أعمالنا.">
-
-A sample UGC-style video from our work.
-
-</p>
-
-</div>
 
 
 <div class="card work-card">
