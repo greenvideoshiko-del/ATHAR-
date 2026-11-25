@@ -1245,6 +1245,18 @@ footer{background:#050A17;border-top:1px solid rgba(212,175,55,.5)}
 @media(max-width:600px){.ugc-pair{gap:10px}.ugc-pair .card{padding:18px 10px}.ugc-pair .card h3{font-size:12.5px}.ugc-pair .card p{font-size:12px}}
 
 .work-single{grid-column:1/-1;flex:0 0 100%;width:100%;max-width:320px;margin:0 auto;justify-self:center}
+
+/* ===== series row ===== */
+.work-series{grid-column:1/-1;flex:0 0 100%;width:100%;max-width:1100px;margin:34px auto 6px}
+.series-title{text-align:center;font-size:clamp(14px,2.2vw,18px);font-weight:800;letter-spacing:.18em;margin:0 0 20px;color:var(--gold-light)}
+[dir="rtl"] .series-title{letter-spacing:.03em}
+.series-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.series-grid .card{min-width:0;text-align:center}
+.series-grid .work-video{max-width:100%}
+.series-grid .card h3{font-size:14px;margin:0;letter-spacing:.1em}
+[dir="rtl"] .series-grid .card h3{letter-spacing:.02em}
+@media(max-width:900px){.series-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.series-grid{gap:10px}.series-grid .card{padding:16px 10px}.series-grid .card h3{font-size:12.5px}}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1849,7 +1861,9 @@ VIEW LIVE DEMO
 
 
 
-<div class="work-single">
+<div class="work-series">
+<h3 class="series-title" data-en="SERIES · YOUR HEALTH IS YOUR WEALTH" data-ar="سلسلة · صحتك ثروتك">SERIES · YOUR HEALTH IS YOUR WEALTH</h3>
+<div class="series-grid">
 <div class="card work-card video-card">
 
 <video
@@ -1864,21 +1878,83 @@ onerror="this.closest('.video-card').style.display='none'">
 </video>
 
 <h3
-data-en="VIDEO SHOWCASE"
-data-ar="عرض فيديو">
+data-en="EPISODE 1"
+data-ar="الحلقة 1">
 
-VIDEO SHOWCASE
+EPISODE 1
 
 </h3>
 
-<p
-data-en="A short-form video from our portfolio."
-data-ar="فيديو قصير من أعمالنا.">
+</div>
 
-A short-form video from our portfolio.
+<div class="card work-card video-card">
 
-</p>
+<video
+class="work-video"
+controls
+playsinline
+preload="metadata">
+<source
+src="series-2.mp4"
+type="video/mp4"
+onerror="this.closest('.video-card').style.display='none'">
+</video>
 
+<h3
+data-en="EPISODE 2"
+data-ar="الحلقة 2">
+
+EPISODE 2
+
+</h3>
+
+</div>
+
+<div class="card work-card video-card">
+
+<video
+class="work-video"
+controls
+playsinline
+preload="metadata">
+<source
+src="series-3.mp4"
+type="video/mp4"
+onerror="this.closest('.video-card').style.display='none'">
+</video>
+
+<h3
+data-en="EPISODE 3"
+data-ar="الحلقة 3">
+
+EPISODE 3
+
+</h3>
+
+</div>
+
+<div class="card work-card video-card">
+
+<video
+class="work-video"
+controls
+playsinline
+preload="metadata">
+<source
+src="series-4.mp4"
+type="video/mp4"
+onerror="this.closest('.video-card').style.display='none'">
+</video>
+
+<h3
+data-en="EPISODE 4"
+data-ar="الحلقة 4">
+
+EPISODE 4
+
+</h3>
+
+</div>
 </div>
 </div>
 
