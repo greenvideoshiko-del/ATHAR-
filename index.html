@@ -1257,6 +1257,11 @@ footer{background:#050A17;border-top:1px solid rgba(212,175,55,.5)}
 [dir="rtl"] .series-grid .card h3{letter-spacing:.02em}
 @media(max-width:900px){.series-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.series-grid{gap:10px}.series-grid .card{padding:16px 10px}.series-grid .card h3{font-size:12.5px}}
+
+/* ===== third hero video under the pair ===== */
+.portal{flex-direction:column;gap:26px}
+.portal-third{position:relative;z-index:1;display:flex;justify-content:center;width:100%}
+.portal-third .portal-frame{width:min(280px,62vw)}
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1352,6 +1357,13 @@ alt="ATHAR">
 
 <div class="portal-frame portal-frame-2" id="portalFrame2">
 <video class="portal-video" muted loop playsinline autoplay preload="metadata" aria-label="ATHAR ad 2"><source src="hero-ad-3.mp4" type="video/mp4"></video>
+<button type="button" class="sound-btn" aria-label="Sound on/off" title="Sound"><span>&#128263;</span></button>
+</div>
+</div>
+
+<div class="portal-third">
+<div class="portal-frame portal-frame-3" id="portalFrame3">
+<video class="portal-video" muted loop playsinline autoplay preload="metadata" aria-label="ATHAR ad 3"><source src="hero-ad-4.mp4" type="video/mp4"></video>
 <button type="button" class="sound-btn" aria-label="Sound on/off" title="Sound"><span>&#128263;</span></button>
 </div>
 </div>
@@ -3385,6 +3397,32 @@ if(d<D*D){x.strokeStyle='rgba(32,199,232,'+(.16*(1-Math.sqrt(d)/D))+')';x.lineWi
 }
 requestAnimationFrame(f);
 }catch(e){}
+})();
+</script>
+
+<script>
+(function(){
+try{
+var f=document.getElementById('portalFrame3');
+if(!f){return;}
+var v=f.querySelector('video'),b=f.querySelector('.sound-btn'),ic=b.querySelector('span');
+var v1=document.getElementById('portalVideo'),f2=document.getElementById('portalFrame2'),v2=f2?f2.querySelector('video'):null;
+var i1=document.getElementById('soundIcon'),i2=f2?f2.querySelector('.sound-btn span'):null;
+var s=v.querySelectorAll('source');
+s[s.length-1].addEventListener('error',function(){f.style.display='none';});
+function setIcon(){ic.innerHTML=v.muted?'&#128263;':'&#128266;';}
+b.addEventListener('click',function(e){e.stopPropagation();v.muted=!v.muted;if(!v.muted&&v.paused){v.play();}setIcon();});
+f.addEventListener('click',function(){if(v.paused){v.play();}else{v.pause();}});
+v.addEventListener('volumechange',function(){
+if(v.muted){return;}
+if(v1&&!v1.muted){v1.muted=true;if(i1){i1.innerHTML='&#128263;';}}
+if(v2&&!v2.muted){v2.muted=true;if(i2){i2.innerHTML='&#128263;';}}
+});
+[v1,v2].forEach(function(o){if(o){o.addEventListener('volumechange',function(){if(!o.muted&&!v.muted){v.muted=true;setIcon();}});}});
+if('IntersectionObserver' in window){
+new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var p=v.play();if(p&&p.catch){p.catch(function(){});}}else{v.pause();}});},{threshold:.25}).observe(f);
+}
+}catch(err){}
 })();
 </script>
 </body>
